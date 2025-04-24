@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@monorepo/*": ["packages/*/src"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
