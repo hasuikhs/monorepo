@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "npm start --workspace=apps/server"
+    "start:server": "npm start --workspace=apps/server",
+    "start:client": "npm start --workspace=apps/client",
+    "dev:client": "npm run dev --workspace=apps/client"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +17,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@types/node": "^22.15.3",
+    "@types/node": "^20",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
