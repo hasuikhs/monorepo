@@ -1,0 +1,4 @@
+{
+  "extends": "@monorepo/eslint-config",
+  "ignorePatterns": ["node_modules", "dist"]
+}

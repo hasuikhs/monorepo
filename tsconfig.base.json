@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
+    // ES2020 문법으로 컴파일 (async/await, nullish coalescing, optional chaining 등 지원)
     "target": "ES2020",
+    // Node.js의 CommonJS 모듈 시스템 사용
     "module": "commonjs",
+    // CommonJS 모듈을 ES6 모듈처럼 import 할 수 있게 함 (require -> import)
     "esModuleInterop": true,
+    // 타입 정의 파일(*.d.ts)의 타입 체크를 건너뛰어 빌드 성능 향상
     "skipLibCheck": true,
+    // 파일 경로의 대소문자 일관성을 강제하여 대소문자 구분 문제 방지
     "forceConsistentCasingInFileNames": true,
+    // 엄격한 타입 체킹 활성화 (null, undefined 체크 등)
     "strict": true,
-    "outDir": "./dist"
   },
+  // 프로젝트 참조 설정 (모노레포에서 다른 프로젝트 참조)
   "references": [
-    { "path": "./apps/server" }
+    { "path": "./apps/client" },
+    { "path": "./apps/test-server" }
   ]
 }

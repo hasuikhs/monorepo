@@ -30,8 +30,8 @@ app.get('/api/test', (req: Request, res: Response) => {
 const generateDummyData = (startId: number, count: number) => {
   return Array.from({ length: count }, (_, index) => ({
     id: startId + index,
-    title: `아이템 ${startId + index}`,
-    description: `이것은 ${startId + index}번째 아이템의 설명입니다.`,
+    title: `아이템 ${ startId + index }`,
+    description: `이것은 ${ startId + index }번째 아이템의 설명입니다.`,
     createdAt: new Date(Date.now() - (startId + index) * 86400000).toISOString()
   }));
 };
@@ -72,5 +72,5 @@ app.get('/api/items', async (req: Request, res: Response) => {
 
 // 서버 시작
 app.listen(port, () => {
-  console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
-}); 
+  console.info(`서버가 http://localhost:${ port } 에서 실행 중입니다.`);
+});

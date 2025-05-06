@@ -1,0 +1,22 @@
+{
+  "name": "@monorepo/test-server",
+  "version": "1.0.0",
+  "description": "test server",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "PORT=3030 ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@monorepo/eslint-config": "*"
+  }
+}
