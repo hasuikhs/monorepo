@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../components/Button';
@@ -22,6 +23,12 @@ const meta = {
       control: 'select',
       options: ['default', 'sm', 'lg', 'icon'],
     },
+    disabled: {
+      control: 'boolean',
+      description: '버튼 비활성화 여부',
+    },
+    onClick: { action: 'clicked' },
+    onMouseEnter: { action: 'mouseEnter' }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: () => {} },
@@ -34,6 +41,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'Button',
+    onClick: action('clicked'),
+    onMouseEnter: action('mouseEnter'),
+    variant: "default",
+    size: "default"
   },
 };
 

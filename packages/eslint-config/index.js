@@ -69,7 +69,7 @@ module.exports = {
     /**
      * React 관련 규칙
      */
-    'react/jsx-uses-react': 'error',                // JSX 사용 시 React import 확인
+    'react/jsx-uses-react': 'off',                // JSX 사용 시 React import 확인
     'react/jsx-uses-vars': 'error',                 // JSX에서 사용된 변수 사용 여부 확인
     'react/jsx-curly-spacing': ['warn', 'always'],  // JSX 중괄호 안쪽에 공백 필수 ({ value })
     'react/display-name': 'off',                    // 컴포넌트 displayName 속성 필수 규칙 비활성화
