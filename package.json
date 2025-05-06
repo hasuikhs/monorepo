@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:client": "npm run dev --workspace=@monorepo/client",
     "dev:test-server": "npm run dev --workspace=@monorepo/test-server",
-    "dev:storybook": "npm run dev --workspace=@monorepo/ui",
+    "dev:sb": "npm run storybook --workspace=@monorepo/ui",
     "build:ui": "npm run build --workspace=@monorepo/ui"
   },
   "engines": {

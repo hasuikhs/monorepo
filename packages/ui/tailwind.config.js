@@ -1,13 +1,18 @@
+import tailwindConfig from '@monorepo/tailwind-config';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  presets: [ require('@monorepo/tailwind-config') ],
+  presets: [ tailwindConfig ],
   content: [
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    // './stories/**/*.{js,ts,jsx,tsx,mdx}'
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        secondary: '#0100FF',
+      },
+    },
   },
   plugins: [],
 }

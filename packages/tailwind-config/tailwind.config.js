@@ -2,9 +2,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#676767',
+        primary: '#FF0000',
         foreground: 'var(--foreground)'
-      }
+      },
     }
   },
   plugins: [],
