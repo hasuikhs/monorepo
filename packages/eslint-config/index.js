@@ -52,6 +52,7 @@ module.exports = {
     'eol-last': ['error', 'always'],                    // 파일 마지막에 빈 줄 추가
     'no-multiple-empty-lines': ['error', { 'max': 1 }], // 연속된 빈 줄은 최대 1줄까지만 허용
     'comma-dangle': ['error', 'never'],                 // 객체/배열의 마지막 항목 뒤에 쉼표 금지
+    '@typescript-eslint/no-explicit-any': 'warn',
 
     /**
      * 공백 규칙

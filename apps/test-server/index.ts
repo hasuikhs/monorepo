@@ -1,13 +1,13 @@
 import cors from 'cors';
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
+import jwt from 'jsonwebtoken';
 
 const app = express();
 const port = process.env.PORT || 3001;
+const secretKey = 'secret';
 
 // CORS 설정
 app.use(cors());
-
-// JSON 파싱을 위한 미들웨어
 app.use(express.json());
 
 // 기본 라우트
@@ -68,6 +68,40 @@ app.get('/api/items', async (req: Request, res: Response) => {
       }
     }
   });
+});
+
+// 로그인: JWT 발급
+app.post('/api/login', (req: Request, res: Response) => {
+  const { username, password } = req.body;
+  // 실제로는 DB 인증을 해야 함
+  if (username === 'test' && password === '1234') {
+    const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
+    res.json({ token });
+  } else {
+    res.status(401).json({ message: '인증 실패' });
+  }
+});
+
+// JWT 검증 미들웨어
+const authenticateJWT = (req: Request, res: Response, next: NextFunction) => {
+  const authHeader = req.headers.authorization;
+  if (authHeader) {
+    const token = authHeader.split(' ')[1]; // 'Bearer <token>' 형식
+    jwt.verify(token, secretKey, (err, user) => {
+      if (err) {
+        return res.status(403).json({ message: '토큰이 유효하지 않습니다.' });
+      }
+      (req as any).user = user;
+      next();
+    });
+  } else {
+    res.status(401).json({ message: '토큰이 필요합니다.' });
+  }
+};
+
+// 보호된 API 예시
+app.get('/api/protected', authenticateJWT, (req: Request, res: Response) => {
+  res.json({ message: '인증된 사용자만 접근할 수 있습니다.', user: (req as any).user });
 });
 
 // 서버 시작

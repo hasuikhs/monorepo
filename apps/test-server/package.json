@@ -11,12 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@monorepo/eslint-config": "*",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
-    "@monorepo/eslint-config": "*"
+    "@types/jsonwebtoken": "^9.0.9",
+    "typescript": "^5"
   }
 }
