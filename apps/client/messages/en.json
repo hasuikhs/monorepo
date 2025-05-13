@@ -8,5 +8,9 @@
     "title": "About",
     "home": "Home",
     "about": "About"
+  },
+  "Button": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }
