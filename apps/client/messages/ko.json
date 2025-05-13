@@ -1,0 +1,12 @@
+{
+  "Home": {
+    "title": "홈",
+    "home": "홈",
+    "about": "소개"
+  },
+  "About": {
+    "title": "소개",
+    "home": "홈",
+    "about": "소개"
+  }
+}

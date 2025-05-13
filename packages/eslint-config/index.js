@@ -90,28 +90,5 @@ module.exports = {
       'allow': ['error', 'warn', 'info']            // error, warn, info는 허용
     }],
     'no-debugger': 'warn',                          // debugger 문 사용 시 경고
-
-    /**
-     * import 규칙
-     * CSS 모듈은 항상 마지막에 정렬됩니다.
-     */
-    'import/order': [
-      'warn',
-      {
-        groups: [ 'builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type' ],
-        pathGroups: [
-          {
-            pattern: '@monorepo/**',
-            group: 'internal',
-            position: 'before'
-          }
-        ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true
-        }
-      }
-    ]
   },
 };

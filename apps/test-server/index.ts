@@ -6,8 +6,6 @@ const app = express();
 const port = process.env.PORT || 3001;
 const secretKey = 'secret';
 
-console.log('테스트 2');
-
 // CORS 설정
 app.use(cors());
 app.use(express.json());
