@@ -1,0 +1,147 @@
+.folderTree {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  min-height: 200px;
+}
+
+.folderItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+  margin: 2px 0;
+  background-color: white;
+}
+
+.folderItem:hover {
+  background-color: #e0e0e0;
+}
+
+.selected {
+  background-color: #e3f2fd;
+}
+
+.expandIcon {
+  margin-right: 8px;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+}
+
+.folderName {
+  font-size: 14px;
+  color: #333;
+}
+
+.children {
+  margin-top: 4px;
+  position: relative;
+}
+
+/* 드래그 앤 드롭 관련 스타일 */
+.dragging {
+  opacity: 0.5;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropTarget {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* 드롭 위치 표시 스타일 */
+.dropTargetTop {
+  position: relative;
+}
+
+.dropTargetTop::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #2196f3;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.dropTargetBottom {
+  position: relative;
+}
+
+.dropTargetBottom::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #2196f3;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.dropTargetInside {
+  background-color: rgba(33, 150, 243, 0.1) !important;
+  border: 2px dashed #2196f3 !important;
+  border-radius: 4px;
+}
+
+/* 드래그 중인 폴더 미리보기 */
+.dragPreview {
+  position: fixed;
+  background-color: white;
+  border: 2px solid #2196f3;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+/* 드롭 불가능한 영역 표시 */
+.dropTargetInvalid {
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  border: 2px dashed #f44336 !important;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+/* 드롭 가능한 폴더 하이라이트 */
+.dropTargetValid {
+  background-color: rgba(33, 150, 243, 0.05);
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+/* 드래그 중인 폴더의 원본 위치 표시 */
+.dragSource {
+  background-color: rgba(33, 150, 243, 0.1);
+  border: 2px dashed #2196f3;
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+/* 드래그 오버레이 */
+.dragOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(33, 150, 243, 0.1);
+  border: 2px dashed #2196f3;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1;
+} 
